@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Random Number Generator</title>
+  <title>Random Numbers Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
 </head>
+
 <body>
-  <h2>Random Number Generator</h2>
-  
-  <p id="result">Click the button to generate a random number!</p>
-  
-  <button onclick="generateRandom()">Generate Number</button>
-  
+
+  <h1>Random Numbers Generator</h1>
+  <p>Click the button to print 10 random numbers between 1 and 100:</p>
+  <button onclick="generateRandomNumbers()">Generate Numbers</button>
+
+  <div id="output"></div>
+
   <script>
-    function generateRandom() {
-      // Generate a random number between 1 and 100
-      let randomNumber = Math.floor(Math.random() * 100) + 1;
-      
-      // Show the result on the page
-      document.getElementById("result").innerText = 
-        "Your random number is: " + randomNumber;
+    function generateRandomNumbers() {
+      let outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = ""; // clear previous output
+
+      let count = 0;
+      while (count < 10) { // generate 10 numbers
+        let randomNumber = Math.floor(Math.random() * 100) + 1; // 1 to 100
+        outputDiv.innerHTML += randomNumber + "<br>";
+        count++;
+      }
     }
   </script>
+
 </body>
+
 </html>
+
